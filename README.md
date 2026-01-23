@@ -327,7 +327,7 @@ The server includes a complete recording system (DVR).
 - **`/record`**: "Smart" endpoint to start recording and watching simultaneously.
   - Example: `/record?url=STREAM_URL&name=Movie` -> Starts rec and redirects to stream.
 - **`/api/recordings/start` (POST)**: Starts a recording in the background.
-- **`/api/recordings/{id}/stream`**: Watch an ongoing or completed recording.
+- **`/api/recordings/{id}/stream`**: Watch a recording. For active recordings, streams in real-time without stopping the recording.
 - **`/api/recordings/{id}/download`**: Download the recorded file.
 
 ### 🛠️ Utilities
@@ -386,7 +386,7 @@ Comprehensive list of all endpoints available in the server.
 | `GET` | `/api/recordings/{id}` | Details of a single recording. |
 | `POST` | `/api/recordings/start` | Starts background recording (JSON payload). |
 | `POST` | `/api/recordings/{id}/stop` | Stops an active recording. |
-| `GET` | `/api/recordings/{id}/stream` | Watch a recording (even while recording). |
+| `GET` | `/api/recordings/{id}/stream` | Watch a recording. For active recordings, streams the growing file in real-time without stopping. |
 | `GET` | `/api/recordings/{id}/download` | Download the recorded video file. |
 | `DELETE` | `/api/recordings/{id}` | Delete a recording. |
 
